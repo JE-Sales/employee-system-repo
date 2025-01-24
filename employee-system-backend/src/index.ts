@@ -5,7 +5,10 @@ import cookieParser from 'cookie-parser';
 import compression from 'compression';
 import cors from 'cors';
 import mongoose from 'mongoose';
+import dotenv, { config } from 'dotenv';
 import router from './router';
+
+dotenv.config();
 
 const app = express();
 
@@ -23,7 +26,7 @@ server.listen(8080, () => {
     console.log('Server running on http://localhost:8080/');
 });
 
-const MONGO_URL = 'REDACTED_URL';
+const MONGO_URL = process.env.MONGODB_URL;
 
 mongoose.Promise = Promise;
 mongoose.connect(MONGO_URL);
