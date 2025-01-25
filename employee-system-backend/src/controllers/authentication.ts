@@ -3,7 +3,7 @@ import express from 'express';
 import { createUser, getUserByEmail } from '../db/users';
 import { authentication, random } from '../helpers';
 
-export const login = async (req: express.Request, res: express.Response): Promise<any> => {
+export const login = async (req: express.Request, res: express.Response) : Promise<any> => {
     try {
         const { email, password } = req.body;
 
@@ -37,7 +37,7 @@ export const login = async (req: express.Request, res: express.Response): Promis
     }
 }
 
-export const register = async (req: express.Request, res: express.Response): Promise<any> => {
+export const register = async (req: express.Request, res: express.Response) : Promise<any> => {
     try {
         const { email, password, username } = req.body;
 
